@@ -83,12 +83,63 @@ Cypress.Commands.add('api_totem_deleteById', () => {
 // Cenários alterantivos
 
 // Teste para cadastrar um totem com email já existente
+Cypress.Commands.add('api_totem_emailExisting', () => {
+  cy.api({
+    method: 'POST',
+    url: `safer/totem`,
+    headers: {
+      'content-type': 'application/json; charset=utf-8'
+    },
+    failOnStatusCode: false,
+    body: {
+      totemId: faker.datatype.uuid(),
+      email: 'teste@email.com',
+      password: faker.internet.password(),
+      statusTotenPinPad: faker.datatype.boolean(),
+      statusTotenPrinter: faker.datatype.boolean()
+    }
+  });
+});
 
 
 // Teste para cadastrar um totem com token já cadastrado
+Cypress.Commands.add('api_totem_totemIdExisting', () => {
+  cy.api({
+    method: 'POST',
+    url: `safer/totem`,
+    headers: {
+      'content-type': 'application/json; charset=utf-8'
+    },
+    failOnStatusCode: false,
+    body: {
+      totemId: '8ebb7924-6bd1-417a-b9d9-44bab8b60a07',
+      email: faker.internet.email(),
+      password: faker.internet.password(),
+      statusTotenPinPad: faker.datatype.boolean(),
+      statusTotenPrinter: faker.datatype.boolean()
+    }
+  });
+});
 
 
 // Teste para tentar cadastrar com um ou todos campos sem preencher
+Cypress.Commands.add('api_totem_emptyFields', () => {
+  cy.api({
+    method: 'POST',
+    url: `safer/totem`,
+    headers: {
+      'content-type': 'application/json; charset=utf-8'
+    },
+    failOnStatusCode: false,
+    body: {
+      "totemId": "",
+      "email": "",
+      "password": "",
+      "statusTotenPinPad": "",
+      "statusTotenPrinter": "",
+    }
+  });
+});
 
 
 // Teste para excluir um totem com ID inexistente
