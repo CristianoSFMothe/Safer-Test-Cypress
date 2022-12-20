@@ -1,6 +1,6 @@
 describe('GET /customer', () => {
   it('list all customer successfully', () => {
-    cy.api_listAllCustomer()
+    cy.api_customer_listAll()
       .then((response) => {
         expect(response.status).to.equal(200)
         expect(response.body).is.not.empty

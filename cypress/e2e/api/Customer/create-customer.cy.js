@@ -1,6 +1,6 @@
 describe('POST /customer', () => {
   it('create customer successfully', () => {
-    cy.api_createCustomer()
+    cy.api_customer_create()
         .then((response) => {
           expect(response.status).to.equal(201)
           expect(response.body).is.not.empty

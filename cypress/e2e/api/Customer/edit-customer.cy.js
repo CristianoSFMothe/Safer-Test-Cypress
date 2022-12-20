@@ -1,6 +1,6 @@
 describe('PUT /customer', () => {
   it('edit customer successfully', () => {
-    cy.api_editFields()
+    cy.api_customer_editById()
       .then((response) => {
         expect(response.status).to.equal(200)
         expect(response.body).is.not.empty
