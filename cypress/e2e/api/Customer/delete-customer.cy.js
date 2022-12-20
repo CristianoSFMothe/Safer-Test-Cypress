@@ -15,7 +15,7 @@ describe('DELETE /customer', () => {
       .then((response) => {
         expect(response.status).to.equal(404);
         expect(response.statusText).to.equal('Not Found');
-        expect(response.body.message).to.equal('Totem not found');
+        expect(response.body.message).to.equal('Customer not found');
         expect(response.body.error).to.equal('Not Found');
       });
   });

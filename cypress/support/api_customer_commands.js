@@ -52,20 +52,20 @@ Cypress.Commands.add('api_customer_listById', () => {
 Cypress.Commands.add('api_customer_editById', () => {
   cy.api({
     method: 'PUT',
-    url: `safer/customer/f477ee5e-c9b5-41d3-9b33-a2fed7fdcb8e`,
+    url: `safer/customer/2f97eba9-c04a-44df-93e2-8ccbfc907063`,
     headers: {
       'content-type': 'application/json; charset=utf-8'
     },
     failOnStatusCode: false,
     body: {
-      firstName: 'Martin',
-      lastName: 'Heitor Cardoso',
-      email: 'martir_miquel@alemponte.com.br',
-      phone: '+55 (21) 98936-1163',
-      tokenAuthentication: 'ef45085d-9ef7-4974-8743-dbcf1c8d52c8',
+      firstName: 'Rayssa',
+      lastName: 'Pietra Almeida',
+      email: 'rayssa@alemponte.com.br',
+      phone: '+55 (21) 99322-9011',
+      tokenAuthentication: 'b61e8d68-097e-48e9-aa99-b4361d290d1f',
       checkAcessibility: false,
       checkEmail: true,
-      checkPhone: true,
+      checkPhone: false
     }
   });
 });
@@ -74,7 +74,7 @@ Cypress.Commands.add('api_customer_editById', () => {
 Cypress.Commands.add('api_customer_deleteById', () => {
   cy.api({
     method: 'DELETE',
-    url: `safer/customer/b85bbe84-5d87-472f-9441-39fdce92de23`,
+    url: `safer/customer/e8aed3bc-1c2b-4e87-8c5e-dfd6e8b55a90`,
     headers: {
       'content-type': 'application/json; charset=utf-8'
     },
@@ -161,4 +161,3 @@ Cypress.Commands.add('api_customer_notFoundIdDelete', () => {
     failOnStatusCode: false,
   });
 });
-
