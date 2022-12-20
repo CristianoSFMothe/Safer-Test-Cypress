@@ -78,3 +78,68 @@ Cypress.Commands.add('api_deleteByIdCustomer', () => {
   });
 });
 
+
+Cypress.Commands.add('api_customer_emailExisting', () => {
+  cy.api({
+    method: 'POST',
+    url: `safer/customer`,
+    headers: {
+      'content-type': 'application/json; charset=utf-8'
+    },
+    failOnStatusCode: false,
+    body: {
+      firstName: faker.name.firstName(),
+      lastName: faker.name.lastName(),
+      email: 'luis-drumond99@oralcamp.com.br',
+      phone: faker.phone.number('+55 ## 9####-####'),
+      tokenAuthentication: faker.datatype.uuid(),
+      checkAcessibility: true,
+      checkEmail: true,
+      checkPhone: true
+    }
+  });
+});
+
+Cypress.Commands.add('api_customer_tokenExisting', () => {
+  cy.api({
+    method: 'POST',
+    url: `safer/customer`,
+    headers: {
+      'content-type': 'application/json; charset=utf-8'
+    },
+    failOnStatusCode: false,
+    body: {
+      firstName: faker.name.firstName(),
+      lastName: faker.name.lastName(),
+      email: faker.internet.email(),
+      phone: faker.phone.number('+55 ## 9###-###-###'),
+      tokenAuthentication: 'be0237cf-1652-451f-9c32-f5da127ad4a3',
+      checkAcessibility: true,
+      checkEmail: true,
+      checkPhone: true
+    }
+  });
+});
+
+
+Cypress.Commands.add('api_customer_emptyFields', () => {
+  cy.api({
+    method: 'POST',
+    url: `safer/customer`,
+    headers: {
+      'content-type': 'application/json; charset=utf-8'
+    },
+    failOnStatusCode: false,
+    body: {
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      tokenAuthentication: '',
+      checkAcessibility: true,
+      checkEmail: true,
+      checkPhone: true,
+    }
+  });
+});
+
