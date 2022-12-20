@@ -24,3 +24,25 @@ Cypress.Commands.add('api_createCustomer', () => {
         }
     });
 });
+
+Cypress.Commands.add('api_listAllCustomer', () => {
+  cy.api({
+    method: 'GET',
+    url: `safer/customer`,
+    headers: {
+      'content-type': 'application/json; charset=utf-8'
+    },
+    failOnStatusCode: false,
+  });
+});
+
+Cypress.Commands.add('api_listByIdCustomer', () => {
+  cy.api({
+    method: 'GET',
+    url: `safer/customer/20ffdc4d-645b-44c4-a618-f270dec1f963`,
+    headers: {
+      'content-type': 'application/json; charset=utf-8'
+    },
+    failOnStatusCode: false,
+  });
+});

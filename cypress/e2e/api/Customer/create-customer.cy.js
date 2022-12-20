@@ -1,4 +1,4 @@
-describe('PATCH Customer', () => {
+describe('POST /customer', () => {
   it('create customer successfully', () => {
     cy.api_createCustomer()
         .then((response) => {
