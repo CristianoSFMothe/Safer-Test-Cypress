@@ -1,5 +1,5 @@
-describe('POST Customer', () => {
-  it('edit customer successfully', () => {
+describe('POST /totem', () => {
+  it('edit totem successfully', () => {
     cy.api_totem_editById()
       .then((response) => {
         expect(response.status).to.equal(200)
