@@ -31,6 +31,12 @@ No terminal de linha de comando,  execute o comando
 npm i @faker-js/faker@7.6.0 cypress@12.0.2 cypress-plugin-api@2.6.1 -D
 ```
 
+Para gerar uma massa de teste com dados regionais do Brasil, necessário instalar a depedência do `faker br`
+
+```bash
+npm i faker-br
+````
+
 > A lib `faker` será utilizada para a criação de dados aleatórios para os testes
 > E a lib `cypress-plugin-api` será utilizada para prover feedback visual durante os testes de API.
 
@@ -53,7 +59,7 @@ npx cypress open
 
 4. Crie um primeiro arquivo de teste clicando na opção `Create new emtpy spec`;
 
-5. Nomeie o arquivo como `create-totem.cy.js`;
+5. Nomeie o arquivo como `create-partner.cy.js`;
 
 7. Clique no botão `Create spec` e então, confirme clicando no botão `Ok, run the spec`
    Após a execução do arquivo recém criado, feche o navegador `Electron`.
